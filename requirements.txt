@@ -2,3 +2,4 @@ plotly
 datetime
 streamlit
 pandas
+st_autorefresh
