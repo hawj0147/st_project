@@ -2,6 +2,11 @@ import streamlit as st
 from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 import pandas as pd
+from datetime import datetime, timezone, timedelta
+
+KST = timezone(timedelta(hours=9))
+now = datetime.now(KST).hour
+
 
 # 1. 페이지 설정
 st.set_page_config(page_title="2024 시간대별 치사율 분석", layout="wide", page_icon="🚨")

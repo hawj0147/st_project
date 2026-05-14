@@ -237,7 +237,14 @@ try:
             fig_gauge = go.Figure(go.Indicator(mode = "gauge+number", value = final_score,
                 gauge = {'axis': {'range': [0, 10], 'tickfont': {'size': 10}}, 'bar': {'color': color},
                     'steps': [{'range': [0, 2], 'color': "rgba(40, 167, 69, 0.1)"}, {'range': [2, 5], 'color': "rgba(255, 165, 0, 0.1)"}, {'range': [5, 10], 'color': "rgba(255, 75, 75, 0.1)"}]}))
-            fig_gauge.update_layout(template='plotly_dark', height=200, margin=dict(t=0, b=0, l=20, r=20))
+            
+            # 이 부분을 아래와 같이 수정합니다 (autosize=True 추가 및 마진 조정)
+            fig_gauge.update_layout(
+                template='plotly_dark', 
+                height=220,              # 높이를 약간 조절하여 안정감 확보
+                autosize=True,           # 탭 이동 시 너비 자동 재계산 강제
+                margin=dict(t=50, b=20, l=30, r=30) # 상단 마진을 주어 숫자가 잘리지 않게 조정
+            )
             st.plotly_chart(fig_gauge, use_container_width=True)
 
         st.markdown("---")
