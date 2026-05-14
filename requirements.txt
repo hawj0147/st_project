@@ -3,3 +3,4 @@ datetime
 streamlit
 pandas
 streamlit-autorefresh
+openpyxl
