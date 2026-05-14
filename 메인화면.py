@@ -96,7 +96,7 @@ st.markdown("""
 with st.sidebar:
     st.markdown("## 🕒 MONITORING")
     KST = timezone(timedelta(hours=9))
-    curr_time = datetime.now(KST).hour
+    curr_time = datetime.now(KST)
     curr_hour = curr_time.hour
     st.markdown(f"""
     <div style="background: #2d2d39; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #3f3f46; margin-bottom: 10px;">
