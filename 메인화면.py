@@ -4,8 +4,7 @@ from streamlit_autorefresh import st_autorefresh
 import pandas as pd
 from datetime import datetime, timezone, timedelta
 
-KST = timezone(timedelta(hours=9))
-now = datetime.now(KST).hour
+
 
 
 # 1. 페이지 설정
@@ -96,9 +95,9 @@ st.markdown("""
 # 3. 사이드바
 with st.sidebar:
     st.markdown("## 🕒 MONITORING")
-    curr_time = datetime.now()
+    KST = timezone(timedelta(hours=9))
+    curr_time = datetime.now(KST).hour
     curr_hour = curr_time.hour
-    
     st.markdown(f"""
     <div style="background: #2d2d39; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #3f3f46; margin-bottom: 10px;">
         <div style="font-size: 1.8rem; font-family: 'JetBrains Mono'; font-weight: 700; color: #00ffca;">
